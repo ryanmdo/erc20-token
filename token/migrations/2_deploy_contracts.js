@@ -2,7 +2,7 @@ var pepeToken = artifacts.require("./pepeToken.sol");
 
 
 module.exports = function(deployer) {
-  deployer.deploy(pepeToken);
+  deployer.deploy(pepeToken, 9000);
 };
 
 
