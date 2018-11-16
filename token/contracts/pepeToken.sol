@@ -28,7 +28,7 @@ contract pepeToken{
 
     //to, value, and from, it also must be publicly accessible and return a status of success
     function transfer(address _to, uint256 _value) public returns (bool success) {
-        require(balanceOf[msg.sender] >= _value);
+        require(balanceOf[msg.sender] >= _value,"You have not enough funds.");
 
         balanceOf[msg.sender] -= _value;
         balanceOf[_to] += _value;
