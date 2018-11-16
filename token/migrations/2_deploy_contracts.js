@@ -1,9 +1,8 @@
-var Migrations = artifacts.require("./Migrations.sol");
-
+var pepeToken = artifacts.require("./pepeToken.sol");
 
 
 module.exports = function(deployer) {
-  deployer.deploy(Migrations);
+  deployer.deploy(pepeToken);
 };
 
 
