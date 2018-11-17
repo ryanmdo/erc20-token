@@ -34,6 +34,8 @@ contract pepeToken{
         balanceOf[_to] += _value;
 
         Transfer(msg.sender, _to, _value);
+
+        //What is emitting? IT says that the contraxct requires it
         return true; //only calls if the require was success first
     }
 

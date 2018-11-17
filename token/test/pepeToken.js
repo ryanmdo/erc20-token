@@ -17,6 +17,7 @@ contract('pepeToken', function(accounts) { //we are graabbing the pepToken someh
     });
 
 
+
     it('sets the total supply upon deployment', function(){
         //Just like in the console, I have to runb some callback function to get the deployed contract
         return pepeToken.deployed().then(function(instance) {
@@ -24,20 +25,16 @@ contract('pepeToken', function(accounts) { //we are graabbing the pepToken someh
             return tokenInstance.totalSupply();
         }).then(function(totalSupply){
             assert.equal(totalSupply.toNumber(), 9000,'set total supply to 9000')
-
             //this is needlessly complicated for setting a number
             return tokenInstance.balanceOf(accounts[0]);
-        
         }).then(function(adminBalance){
-            
-            assert.equal(adminBalance.toNumber(), 9000,'this sets the admin supply to 9000')        
-        
+            assert.equal(adminBalance.toNumber(), 9000,'this sets the admin supply to 9000')            
         });
     });
 
 
-    it('transfers token owndership', function(){
 
+    it('transfers token owndership', function(){
         return pepeToken.deployed().then(function(instance) {
             tokenInstance = instance;
             return tokenInstance.transfer.call(accounts[0],999999999999999999999);
@@ -61,8 +58,10 @@ contract('pepeToken', function(accounts) { //we are graabbing the pepToken someh
             assert.equal(balance.toNumber(), 8100, 'subtracts from sender');
         });
 
+
+
     });
 
 
-
+    
 });
